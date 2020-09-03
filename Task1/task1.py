@@ -48,12 +48,11 @@ def write_to_file():
 
 
 # Форматированный вывод списка на экран
-# Может принимать в качестве параметров две строки:
-# - Формат вывода значения
-# - Шаблон форматирования вывода
-def print_list(value_format="{0}",  template="{9.3f}"):
+# Может принимать в качестве параметра строку:
+# - Формат вывода
+def print_list(value_format="{0:.2f}"):
     for i in task_list:
-        print(value_format.format(i, template))
+        print(value_format.format(i))
 
 
 # Эта процедура может содержать любую
