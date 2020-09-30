@@ -41,10 +41,10 @@ def multiply():
 
 
 # Запись результата выполнения программы в файл
-def write_to_file():
+def write_to_file(value_format="{0:.2f}"):
     with open(DEFAULT_OUTPUT_FILE, "w") as file:
         for i in task_list:
-            file.write(str(i) + "\n")
+            file.write(value_format.format(i) + "\n")
 
 
 # Форматированный вывод списка на экран
