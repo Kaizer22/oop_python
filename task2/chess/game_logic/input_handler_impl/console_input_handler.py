@@ -8,7 +8,6 @@ class ConsoleInputHandler(InputHandler):
         is_correct = False
         while not is_correct:
             args = str(input())
-            input()
             if args == "":
                 return None
             else:

@@ -19,7 +19,10 @@ class ConsoleDrawer(DrawManager):
     def draw(self, board):
         buf_str = ""
         pattern = "{0}"
-
+        info = "  "
+        for i in range(0, board.field_width ):
+            info += str(i + 1) + "  "
+        print(info)
         for i in range(0, board.field_height):
             for j in range(0, board.field_width):
                 buf_str += pattern \
@@ -27,6 +30,7 @@ class ConsoleDrawer(DrawManager):
                     board.get_cell(j, i), j, i))
             print(str(i + 1) + "|" + buf_str + "|" + str(i + 1))
             buf_str = ""
+        print(info)
 
     # Получение спец шахматного символа utf  по коду
     def _get_char(self, code, x, y):
