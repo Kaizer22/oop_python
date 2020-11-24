@@ -1,8 +1,9 @@
-from task4.fighters.fighter import Fighter
-from task4.fighters.inventory import Inventory
-from task4.fighters.item import Item, Quality
-from task4.fighters.long_range_combat_mixin import LongRangeCombatMixin
-from task4.fighters.logger import log_method_calls
+from task5.fighters.fighter import Fighter
+from task5.fighters.inventory import Inventory
+from task5.fighters.item import Item, Quality
+from task5.fighters.long_range_combat_mixin import LongRangeCombatMixin
+from task5.fighters.logger import log_method_calls
+from task5.fighters.fighter import attack_decorator
 
 
 @log_method_calls("%H:%M:%S")
@@ -35,6 +36,7 @@ class Archer(Fighter, Inventory, LongRangeCombatMixin):
         self.luck += delta_luck
         self.base_attack += delta_attack
 
+    @attack_decorator
     def attack(self, enemy):
         self.update_items()
         if self.is_in_block:

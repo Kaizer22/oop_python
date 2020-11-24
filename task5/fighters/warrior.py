@@ -1,10 +1,11 @@
 import time
 from functools import wraps
 
-from task4.fighters.fighter import Fighter
-from task4.fighters.inventory import Inventory
-from task4.fighters.item import Item, Quality
-from task4.fighters.logger import log_method_calls
+from task5.fighters.fighter import attack_decorator
+from task5.fighters.fighter import Fighter
+from task5.fighters.inventory import Inventory
+from task5.fighters.item import Item, Quality
+from task5.fighters.logger import log_method_calls
 
 
 @log_method_calls("%H:%M:%S")
@@ -31,7 +32,7 @@ class Warrior(Fighter, Inventory):
         self.luck += delta_luck
         self.base_attack += delta_attack
 
-    def attack(self, enemy):
+    def child_attack(self, enemy):
         self.update_items()
         if self.is_in_block:
             self.is_in_block = False
@@ -39,9 +40,8 @@ class Warrior(Fighter, Inventory):
         attack = (self.base_attack * (self.agility / (2 - self.luck / 10))) - (enemy.armor / 5)
         print("Воин ({0:.2f}HP) атаковал . Нанесено урона: {1:.2f} ".format(self.hp, attack))
         enemy.hp -= attack
-        pass
 
-    def block(self, enemy):
+    def child_block(self, enemy):
         print("Воин ({0:.2f}HP) - блок".format(self.hp))
         self.update_items()
         if not self.is_in_block:

@@ -1,0 +1,5 @@
+Статистика 10 поединков(-а) бойцов 
+<class 'task5.fighters.warrior.Warrior'> 
+<class 'task5.fighters.archer.Archer'>
+Боец 1 победил в 70.0% поединков 
+Боец 2 победил в 30.0% поединков 
