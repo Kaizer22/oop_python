@@ -1,8 +1,13 @@
+import time
+from functools import wraps
+
 from task3.fighters.fighter import Fighter
 from task3.fighters.inventory import Inventory
 from task3.fighters.item import Item, Quality
+from task4.fighters.logger import log_method_calls
 
 
+@log_method_calls("%H:%M:%S")
 class Warrior(Fighter, Inventory):
 
     def __init__(self):
