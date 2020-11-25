@@ -28,7 +28,7 @@ fighter2 = Archer()
 # Запуск генерации статистики по n поединкам
 # Отчет записывается в файл stats.txt
 generatorThread = Thread(target=generate_stats, args=("stats.txt", fighter1, fighter2
-                                                      , 10))
+                                                      , 20))
 generatorThread.start()
 
 game = FightersGame(fighter1, fighter2)

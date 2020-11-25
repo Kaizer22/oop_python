@@ -1,4 +1,4 @@
 
 class StatsGeneratorTimeoutException(Exception):
     def __init__(self):
-        self.message = "Превышено максимальное время сбора статистики. Экстренное завершение"
+        self.message = "Превышено максимальное время сбора статистики. Завершение"

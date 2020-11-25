@@ -37,7 +37,7 @@ class Archer(Fighter, Inventory, LongRangeCombatMixin):
         self.base_attack += delta_attack
 
     @attack_decorator
-    def attack(self, enemy):
+    def child_attack(self, enemy):
         self.update_items()
         if self.is_in_block:
             self.is_in_block = False
@@ -46,7 +46,7 @@ class Archer(Fighter, Inventory, LongRangeCombatMixin):
         enemy.hp -= attack
         pass
 
-    def block(self, enemy):
+    def child_block(self, enemy):
         print("Лучник ({0:.2f}HP) - блок".format(self.hp))
         self.update_items()
         if not self.is_in_block:

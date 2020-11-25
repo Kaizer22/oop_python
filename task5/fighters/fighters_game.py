@@ -3,8 +3,6 @@ from datetime import datetime
 import time
 from functools import wraps
 
-from task5.fighters.logger import Debugger
-
 
 from task5.fighters.long_range_combat_mixin import LongRangeCombatMixin
 
